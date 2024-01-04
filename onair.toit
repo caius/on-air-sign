@@ -13,10 +13,9 @@ main:
     button.wait-for 1
     button.wait-for 0
 
+    // Toggle LED
     ledOn = not ledOn
-    if ledOn:
-      led.set 1
-    else:
-      led.set 0
+    led.set ledOn ? 1 : 0
 
+    // Debounce
     sleep --ms=500
